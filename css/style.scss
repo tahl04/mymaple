@@ -267,21 +267,21 @@ body{
                             
                         }
                         .select-wrap{
-                            width: 90%;
-                            height: 90%;
+                            width: 95%;
+                            height: 95%;
                             @include flex(justify-content, flex-start){
                                 flex-wrap: wrap;
                             }
                             li{
                                 margin: 8px;
-                                width: 120px;
+                                width: 100px;
                                 height: 120px;
                                 cursor: pointer;
                                 @include flex(space-between, center){
                                     flex-direction: column;
                                 }
                                 .abat-icon{
-                                    width: 120px;
+                                    width: 100px;
                                     position: relative;
                                     .high{
                                         width: 110px;
@@ -290,7 +290,7 @@ body{
                                         position: absolute;
                                     }
                                     .row{
-                                        width: 100px;
+                                        width: 90px;
                                         position: absolute;
                                         top: 10px;
                                         left: 50%;
@@ -888,6 +888,29 @@ footer{
                         }
                     }
                 }
+                &.start_pne{
+                    height: 0;
+                        a{
+                            img{
+                                height: 0;
+                            }
+                        }
+                }
+                &.start_dsk{
+                    a{
+                        padding: 0;
+                        margin: 0;
+                        height: 100%;
+                        display: block;
+                        img{
+                            height: 100%;
+                            transition: 0.2s;
+                            &:hover{
+                                filter: brightness(0.8);
+                            }
+                        }
+                    }
+                }
             }
             .link{
                 @include flex(){}
@@ -982,3 +1005,181 @@ footer{
     }
 }
 
+
+//반응형
+
+
+
+$tablet : 1023px;
+$mobile : 767px;
+
+@mixin device($min,$max){
+    @media (min-width:$min) and (max-width:$max) {
+        @content;
+    }
+}
+
+@include device($mobile,$tablet){
+
+   
+}
+
+
+@media screen and (max-width:$mobile){
+     
+    ::-webkit-scrollbar{
+        display: none;
+    }
+    body{
+        overflow: auto;
+    }
+    .window-maple{
+        @include flex(){
+            flex-direction: column;
+        }
+        .window-i{
+            position: absolute;
+            @include flex(){
+                flex-direction: column;
+            }
+            &:first-child{
+                img{
+                    width: 100px;
+                }
+            }
+            &:nth-child(2){
+                img{
+                    width: 110px;
+                }
+            }
+            h4{
+                font-size: 16px;
+            }
+        }
+    
+        .window-box{
+            &.edongs{
+                transform: translateY(-2000px);
+            }
+            transform: translateY(0);
+            position: relative;
+            .window-box-wrap{
+                width: 100%;
+                @include flex(){
+                    flex-direction: column;
+                }
+                .top-bar{
+                    .bar-btn{
+                        .m-btn{
+                            display: none;
+                        }
+                    }
+                }
+            }
+            
+        }
+        
+        .grim{
+            width: 100%;
+            top: 0;
+            left: 0;
+            &.active{
+                width: 100%;
+            }
+        }
+    
+        .abat{
+            z-index: 6;
+            width: 100%;
+            top: 0;
+            left: 0;
+            // transform: translate(-50%, 50%);
+            &.active{
+                width: 100%;
+            }
+            
+            nav{
+                transition: height 0.2s;
+                height: 300px;
+                &.active{
+                    height: 300px;
+                }
+            }
+        }
+    
+        .downs{
+            width: 100%;
+            top: 0;
+            left: 0;
+        }
+        
+    }
+    
+    footer{
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        .under_box{
+            width: 0;
+            height: 0;
+            opacity: 0;
+            pointer-events : none;
+            
+        }
+        .start{
+            margin-left: 1px;
+            height: 35px;
+            a{
+                padding: 0;
+                margin: 0;
+                height: 100%;
+                display: block;
+                img{
+                    height: 100%;
+                    transition: 0.2s;
+                    &:hover{
+                        filter: brightness(0.8);
+                    }
+                }
+            }
+            a{
+                padding: 0;
+                margin: 0;
+                height: 100%;
+                display: block;
+                img{
+                    height: 100%;
+                    transition: 0.2s;
+                    &:hover{
+                        filter: brightness(0.8);
+                    }
+                }
+            }
+            &.start_pne{
+                a{
+                    padding: 0;
+                    margin: 0;
+                    height: 100%;
+                    display: block;
+                    img{
+                        height: 100%;
+                        transition: 0.2s;
+                        &:hover{
+                            filter: brightness(0.8);
+                        }
+                    }
+                }
+            }
+            &.start_dsk{
+            height: 0;
+                a{
+                    img{
+                        height: 0;
+                    }
+                }
+            }
+        }
+    }
+
+
+}

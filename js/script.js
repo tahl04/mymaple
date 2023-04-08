@@ -94,6 +94,7 @@ $(document).ready(function() {
         $('.set_under_box').removeClass("del");
         $('.abat').removeClass("edongs");
     });
+
     $('.start').on("click",function(){
         $('.set_under_box').removeClass("del");
         $('.abat').removeClass("edongs");
@@ -104,11 +105,29 @@ $(document).ready(function() {
         $('.ch_under_box').removeClass("active");
         addCh();
         addBg();
+        location.reload();
         
-        $(".downs").css({"top":400,"left":50});
-        $(".grim").css({"top":50,"left":300});
-        $(".abat").css({"top":150,"left":700});
+        // $(".downs").css({"top":400,"left":50});
+        // $(".grim").css({"top":50,"left":300});
+        // $(".abat").css({"top":150,"left":700});
     });
+
+
+    // $('.start_pne').on("click",function(){
+    //     $('.set_under_box').removeClass("del");
+    //     $('.abat').removeClass("edongs");
+    //     $('.ch_under_box').removeClass("del");
+    //     $('.grim').removeClass("edongs");
+    //     $('.downs').removeClass("edongs");
+    //     $('.set_under_box').removeClass("active");
+    //     $('.ch_under_box').removeClass("active");
+    //     addCh();
+    //     addBg();
+        
+    //     // $(".downs").css({"top":0,"left":0});
+    //     // $(".grim").css({"top":0,"left":0});
+    //     // $(".abat").css({"top":0,"left":0});
+    // });
     
 
     // 4. 아바타 파츠 갯수에 맞게 div 넣기
